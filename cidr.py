@@ -36,24 +36,22 @@ brange = 32 - cidr
 for i in range(brange):
     broad[3 - i/8] = broad[3 - i/8] + (1 << (i % 8))
 
-#This gives you useable hosts for the given subnet
+#This gives you usable hosts for the given subnet
 xhost = 2 ** brange - 2
 host = "{:,}".format(xhost)
 
 #o1.o2.o3.o4 is the X.X.X.X makeup of an IP address
-o1 = broad[0] - net[0]
-o2 = broad[1] - net[1]
-o3 = broad[2] - net[2]
-o4 = broad[3] - net[3]
+imask = [0, 0, 0, 0]
+for i in range(cidr):
+	imask[-i/8] = imask[-i/8] + (1 << (7 - i % 8))
 
 #need to build wildcard mask for doing ospf and ACL operations
-#need to validate input of IP address (ipaddress module?)
-#if there is less than /24, need to * by the power of 2
-#how in the fuck do i do that? 
+#need to validate input of IP address (ipaddress module?) 
 
 # Print information, mapping integer lists to strings for easy printing
 print "Address: " , xaddr
 print "Netmask: " , ".".join(map(str, mask))
+#print "Wildcard Mask: " , ".".join(map(str, imask))
 print "Network: " , ".".join(map(str, net))
 print "Usable IPs: " , host
 print "Broadcast: " , ".".join(map(str, broad))
