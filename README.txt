@@ -1,4 +1,4 @@
-ip-subnet-calc v0.1 BETA
+ip-subnet-calc v02.11 BETA
 
 # 
 # Script by Steven Grove (@sigwo)
@@ -21,13 +21,12 @@ Input any IP address and CIDR notation (with NO / mark) and get information abou
 Entered IP:
 Netmask:
 Network:
+Wildcard Mask:
 Usable Hosts:
 Broadcast: 
 
 How to use:
-You will need Python 2.7 and the default libraries. Double click "ip-subnet-calc", input the IP and CIDR notation.
-
-On Windows, a cmd.exe window will appear, running the code through it. The lines are a way of showing it is still
-running and not hung. 
+You will need Python 2.7 and the default libraries. Call ip-subnet-calc.py from your favorite Terminal.app on Windows,
+Linux, or OS X.
 
 If you have questions or comments, please email me. me@sigwo.com
