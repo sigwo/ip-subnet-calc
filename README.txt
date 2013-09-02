@@ -19,8 +19,8 @@ What it does:
 Input any IP address and CIDR notation (with NO / mark) and get information about your subnet. Returns:
 
 Entered IP:
-Network:
 Netmask:
+Network:
 Useable Hosts:
 Broadcast: 
 
