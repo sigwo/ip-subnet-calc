@@ -13,9 +13,14 @@
 # Date: 09-01-13
 
 import sys
+import os
+#from blessings import Terminal
+
+# Going to set up colors for a future project, not completed yet
+#term = Terminal()
 
 # Get address string and CIDR string from command line
-xaddr = raw_input("IP address: ")
+xaddr = raw_input("IP address: ") # need to validate input of IP address 
 xcidr = raw_input("CIDR notation, NO / mark!: ")
 addr = xaddr.split('.')
 cidr = int(xcidr)
@@ -36,7 +41,7 @@ brange = 32 - cidr
 for i in range(brange):
     broad[3 - i/8] = broad[3 - i/8] + (1 << (i % 8))
 
-#This gives you usable hosts for the given subnet
+# This gives you usable hosts for the given subnet
 xhost = 2 ** brange - 2
 host = "{:,}".format(xhost)
 
@@ -50,10 +55,8 @@ imask = []
 for i in range (4):
 	imask.append(int(o[i]) & broad[i])
 
-#need to validate input of IP address (ipaddress module?) Not standard for 2.7 
-
 # Print information, mapping integer lists to strings for easy printing
-
+print 'Here are your results:..............'
 print "Address: " , xaddr
 print "Netmask: " , ".".join(map(str, mask))
 print "Wildcard Mask: " , ".".join(map(str, imask))
