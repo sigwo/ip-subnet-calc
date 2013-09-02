@@ -23,9 +23,9 @@ cidr = int(xcidr)
 # Initialize the netmask and calculate based on CIDR mask
 mask = [0, 0, 0, 0]
 for i in range(cidr):
-    mask[i/8] = mask[i/8] + (1 << (7 - i % 8))
+    mask[i/8] = mask[i/8] + (1 << (7 - i % 8)) 
 
-# Initialize net and binary and netmask with addr to get network
+# Initialize net and binary and netmask (net) with addr to get network
 net = []
 for i in range(4):
     net.append(int(addr[i]) & mask[i])
@@ -40,18 +40,23 @@ for i in range(brange):
 xhost = 2 ** brange - 2
 host = "{:,}".format(xhost)
 
-#o1.o2.o3.o4 is the X.X.X.X makeup of an IP address
-imask = [0, 0, 0, 0]
-for i in range(cidr):
-	imask[-i/8] = imask[-i/8] + (1 << (7 - i % 8))
+# Initialize o for wildcard mask (imask) with broadcast - net 
+o = [0, 0, 0, 0]
+for i in range(4):
+	o[i] = broad[i] - net[i]
 
-#need to build wildcard mask for doing ospf and ACL operations
-#need to validate input of IP address (ipaddress module?) 
+# This gives the wildcard mask for the given subnet	
+imask = []
+for i in range (4):
+	imask.append(int(o[i]) & broad[i])
+
+#need to validate input of IP address (ipaddress module?) Not standard for 2.7 
 
 # Print information, mapping integer lists to strings for easy printing
+
 print "Address: " , xaddr
 print "Netmask: " , ".".join(map(str, mask))
-#print "Wildcard Mask: " , ".".join(map(str, imask))
+print "Wildcard Mask: " , ".".join(map(str, imask))
 print "Network: " , ".".join(map(str, net))
 print "Usable IPs: " , host
 print "Broadcast: " , ".".join(map(str, broad))
