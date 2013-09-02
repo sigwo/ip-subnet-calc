@@ -55,5 +55,5 @@ o4 = broad[3] - net[3]
 print "Address: " , xaddr
 print "Netmask: " , ".".join(map(str, mask))
 print "Network: " , ".".join(map(str, net))
-print "Useable IPs: " , host
+print "Usable IPs: " , host
 print "Broadcast: " , ".".join(map(str, broad))

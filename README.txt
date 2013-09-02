@@ -21,7 +21,7 @@ Input any IP address and CIDR notation (with NO / mark) and get information abou
 Entered IP:
 Netmask:
 Network:
-Useable Hosts:
+Usable Hosts:
 Broadcast: 
 
 How to use:
