@@ -63,3 +63,5 @@ print "Wildcard Mask: " , ".".join(map(str, imask))
 print "Network: " , ".".join(map(str, net))
 print "Usable IPs: " , host
 print "Broadcast: " , ".".join(map(str, broad))
+
+raw_input("Press any key to exit...")
