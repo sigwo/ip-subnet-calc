@@ -1,5 +1,5 @@
 ip-subnet-calc v02.11 BETA
-
+#
 # 
 # Script by Steven Grove (@sigwo)
 #           www.sigwo.com

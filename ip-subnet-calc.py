@@ -1,5 +1,8 @@
 #!/usr/bin/env python
-# Script by Steven Grove (@sigwo)
+#
+# v02.11 BETA
+#
+# by Steven Grove (@sigwo)
 #           www.sigwo.com
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
