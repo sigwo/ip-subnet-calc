@@ -16,6 +16,7 @@ Broadcast:
 How to use:
 You will need Python 2.7 and the default libraries. Call ip-subnet-calc.py from your favorite 
 Terminal.app on Windows, Linux, or OS X.
+Or double click ip-subnet-calc.exe on a Windows machine.
 
 If you have questions or comments, please email me. steven@sigwo.com
 
